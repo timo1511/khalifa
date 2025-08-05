@@ -1,6 +1,10 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AnnouncementController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -16,6 +20,10 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+// Announcement routes
+Route::get('/announcements', [\App\Http\Controllers\AnnouncementController::class, 'index']);
+Route::post('/announcements', [\App\Http\Controllers\AnnouncementController::class, 'store'])->middleware('auth');
 
 
 Route::post('/subscribe', function (Request $request) {
