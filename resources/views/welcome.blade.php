@@ -1,15 +1,21 @@
 <x-layouts.guest>
     <!-- Hero Section -->
-    <section class="relative bg-gradient-to-b from-maroon-dark to-maroon-medium text-center py-20">
+    <section class="relative bg-gradient-to-b from-maroon-dark to-maroon-medium text-center py-20" style="background-image: url('{{ asset('images/bg.jpg') }}'); background-size: cover; background-position: center;">
         <div class="max-w-5xl mx-auto px-4">
-            <h1 class="text-5xl md:text-6xl font-playfair text-gold mb-6 leading-tight drop-shadow-lg">
+            <h1 class="text-5xl md:text-6xl font-playfair text-white mb-6 leading-tight drop-shadow-2xl">
                 Discover Timeless <span class="inline-block">Leather Craftsmanship</span>
             </h1>
-            <p class="text-xl md:text-2xl text-beige-light mb-10 font-light">
+            <p class="text-xl md:text-2xl text-white mb-10 font-light drop-shadow-lg">
                 Customize wallets, belts, and more—crafted to perfection, personalized for you.
             </p>
-            <a href="/products" class="inline-block bg-gold text-maroon-dark font-playfair px-8 py-3 rounded-md text-lg hover:bg-beige-light hover:text-maroon-dark transition-all shadow-md">Shop Now</a>
-            <a href="/customize" class="inline-block ml-4 bg-transparent border border-gold text-gold font-playfair px-8 py-3 rounded-md text-lg hover:bg-gold hover:text-maroon-dark transition-all">Customize</a>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-4">
+                <a href="/products" class="bg-white text-maroon-dark font-playfair px-8 py-3 rounded-md text-lg hover:bg-beige-light hover:text-maroon-dark transition-all shadow-md w-full sm:w-auto text-center">
+                    Shop Now
+                </a>
+                <a href="/customize" class="bg-white border border-gold text-gold font-playfair px-8 py-3 rounded-md text-lg hover:bg-gold hover:text-maroon-dark transition-all w-full sm:w-auto text-center">
+                    Customize
+                </a>
+            </div>
         </div>
     </section>
 
@@ -17,18 +23,47 @@
     <section class="py-16 bg-beige-light">
         <div class="max-w-6xl mx-auto px-4">
             <h2 class="text-4xl font-playfair text-maroon-dark mb-10 text-center">Featured Products</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Product Card Example -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Product Card 1: Grey Wallet -->
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all">
-                    <img src="https://via.placeholder.com/480x340?text=Leather+Wallet" alt="Leather Wallet" class="w-full h-60 object-cover">
+                    <img src="{{ asset('images/products/wallet1.jpg') }}" alt="Grey Leather Wallet" class="w-full h-60 object-cover">
                     <div class="p-6">
-                        <h3 class="text-2xl font-playfair text-maroon-dark mb-2">Classic Leather Wallet</h3>
-                        <p class="text-beige-dark mb-4">Customizable, elegant, built to last.</p>
-                        <p class="text-xl text-gold font-semibold mb-4">$50.00</p>
-                        <a href="/products/wallet" class="inline-block bg-maroon-dark text-gold px-4 py-2 rounded-md hover:bg-maroon-medium transition">View Details</a>
+                        <h3 class="text-2xl font-playfair text-maroon-dark mb-2">Grey Leather Wallet</h3>
+                        <p class="text-beige-dark mb-4">Modern, sleek, and customizable.</p>
+                        <p class="text-xl text-gold font-semibold mb-4">$48.00</p>
+                        <a href="/products/wallet-grey" class="inline-block bg-maroon-dark text-gold px-4 py-2 rounded-md hover:bg-maroon-medium transition">View Details</a>
                     </div>
                 </div>
-                <!-- Add more Product Cards as needed -->
+                <!-- Product Card 2: Zipped Wallet -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all">
+                    <img src="{{ asset('images/products/wallet2.jpg') }}" alt="Zipped Leather Wallet" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-playfair text-maroon-dark mb-2">Zipped Leather Wallet</h3>
+                        <p class="text-beige-dark mb-4">Secure zipped design for everyday use.</p>
+                        <p class="text-xl text-gold font-semibold mb-4">$55.00</p>
+                        <a href="/products/wallet-zipped" class="inline-block bg-maroon-dark text-gold px-4 py-2 rounded-md hover:bg-maroon-medium transition">View Details</a>
+                    </div>
+                </div>
+                <!-- Product Card 3: Brown Wallet -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all">
+                    <img src="{{ asset('images/products/wallet3.jpg') }}" alt="Brown Leather Wallet" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-playfair text-maroon-dark mb-2">Brown Leather Wallet</h3>
+                        <p class="text-beige-dark mb-4">Rich brown finish, timeless style.</p>
+                        <p class="text-xl text-gold font-semibold mb-4">$50.00</p>
+                        <a href="/products/wallet-brown" class="inline-block bg-maroon-dark text-gold px-4 py-2 rounded-md hover:bg-maroon-medium transition">View Details</a>
+                    </div>
+                </div>
+                <!-- Product Card 4: Brown Classic Wallet -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all">
+                    <img src="{{ asset('images/products/wallet4.jpg') }}" alt="Brown Classic Leather Wallet" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-playfair text-maroon-dark mb-2">Brown Classic Wallet</h3>
+                        <p class="text-beige-dark mb-4">Classic design, premium craftsmanship.</p>
+                        <p class="text-xl text-gold font-semibold mb-4">$52.00</p>
+                        <a href="/products/wallet-brown-classic" class="inline-block bg-maroon-dark text-gold px-4 py-2 rounded-md hover:bg-maroon-medium transition">View Details</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
