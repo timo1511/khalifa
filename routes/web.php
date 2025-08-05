@@ -17,4 +17,16 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
+Route::post('/subscribe', function (Request $request) {
+    // Validate email
+    $validated = $request->validate([
+        'email' => 'required|email'
+    ]);
+
+    // TODO: Handle subscription logic here
+    // For example, save to database or third-party service
+
+    return back()->with('success', 'Thank you for subscribing!');
+})->name('subscribe');
 require __DIR__.'/auth.php';
