@@ -97,7 +97,7 @@
                     <p class="text-maroon-dark mb-4">"Exceptional quality and perfect customization!"</p>
                     <div class="flex items-center">
                         <span class="text-gold font-bold text-lg">★★★★★</span>
-                        <span class="ml-2 text-beige-dark">- John Doe</span>
+                        <span class="ml-2 text-beige-dark">- Kevin Gaitho</span>
                     </div>
                 </div>
                 <!-- Add more testimonials as needed -->

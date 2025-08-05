@@ -17,6 +17,7 @@
                             {{ __('Dashboard') }}
                         </x-nav-link>
                     @endauth
+
                     <!-- E-commerce Menu Items -->
                     <div class="relative">
                         <button @click="open = !open" class="text-gold hover:text-beige-light font-serif-elegant px-3 py-2 inline-flex items-center">
@@ -25,6 +26,7 @@
                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg>
                         </button>
+
                         <div x-show="open" @click.away="open = false" class="absolute z-50 mt-2 w-48 rounded-md shadow-lg bg-beige-lighter ring-1 ring-black ring-opacity-5">
                             <a href="/products/wallets" class="block px-4 py-2 text-sm text-maroon-dark hover:bg-gold">Wallets</a>
                             <a href="/products/holders" class="block px-4 py-2 text-sm text-maroon-dark hover:bg-gold">Holders</a>
@@ -33,6 +35,7 @@
                             <a href="/products/other" class="block px-4 py-2 text-sm text-maroon-dark hover:bg-gold">Other Leather Goods</a>
                         </div>
                     </div>
+
                     <x-nav-link :href="'/catalog'" class="text-gold hover:text-beige-light font-serif-elegant">
                         {{ __('Catalog Download') }}
                     </x-nav-link>
@@ -52,7 +55,6 @@
                         <template #trigger>
                             <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gold bg-maroon-dark hover:text-beige-light focus:outline-none transition ease-in-out duration-150">
                                 <div>{{ Auth::user()->name }}</div>
-
                                 <div class="ms-1">
                                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -69,10 +71,9 @@
                             <!-- Authentication -->
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
-
                                 <x-dropdown-link :href="route('logout')"
-                                        onclick="event.preventDefault();
-                                                    this.closest('form').submit();">
+                                                 onclick="event.preventDefault();
+                                                          this.closest('form').submit();">
                                     {{ __('Log Out') }}
                                 </x-dropdown-link>
                             </form>
