@@ -6,7 +6,7 @@
                 Discover Timeless <span class="inline-block">Leather Craftsmanship</span>
             </h1>
             <p class="text-xl md:text-2xl text-white mb-10 font-light drop-shadow-lg">
-                Customize wallets, belts, and more—crafted to perfection, personalized for you.
+                Customize wallets, belts, and much more—crafted to perfection, personalized for you.
             </p>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-4">
                 <a href="/products" class="bg-white text-maroon-dark font-playfair px-8 py-3 rounded-md text-lg hover:bg-beige-light hover:text-maroon-dark transition-all shadow-md w-full sm:w-auto text-center">
