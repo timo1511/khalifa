@@ -4,79 +4,83 @@
 
 /* Global styles */
 html, body {
-    height: 100%;
-    margin: 0;
-    font-family: 'Figtree', sans-serif;
-    @apply bg-beige-light min-h-screen;
+  height: 100%;
+  margin: 0;
+  font-family: 'Figtree', sans-serif;
+  @apply bg-beige-light min-h-screen;
 }
 
 /* Custom component styles */
 @layer components {
-    .font-serif-elegant {
-        font-family: 'Playfair Display', serif;
-        font-weight: 500;
-    }
+  .font-serif-elegant {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+  }
 }
 
-/* Slider, marquee, and transition utilities combined */
+/* Slider and marquee styling */
 @layer utilities {
-    .transition-transform-opacity {
-        transition-property: transform, opacity;
-        transition-duration: 200ms;
-        transition-timing-function: ease-in-out;
-    }
-    .slider {
-        position: relative;
-        overflow: hidden;
-    }
-    .slider__track {
-        display: flex;
-        width: 100%;
-    }
-    .slider__item {
-        flex: 0 0 100%;
-        text-align: center;
-    }
-    .marquee {
-        --gap: 2rem;
-        position: relative;
-        display: flex;
-        overflow: hidden;
-        user-select: none;
-        gap: var(--gap);
-    }
+  .transition-transform-opacity {
+    transition-property: transform, opacity;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+  }
+  .slider {
+    position: relative;
+    overflow: hidden;
+  }
+  .slider__track {
+    display: flex;
+    width: 100%;
+  }
+  .slider__item {
+    flex: 0 0 100%;
+    text-align: center;
+  }
+
+  .marquee {
+    --gap: 2rem;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: var(--gap);
+  }
+  .marquee__content {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    gap: var(--gap);
+    min-width: 100%;
+    /* Use smooth infinite linear animation for horizontal scrolling */
+    animation: marquee-scroll 20s linear infinite;
+    will-change: transform;
+  }
+  .marquee--hover-pause:hover .marquee__content,
+  .marquee--hover-pause:focus-within .marquee__content {
+    animation-play-state: paused;
+  }
+  @media (prefers-reduced-motion: reduce) {
     .marquee__content {
-        flex-shrink: 0;
-        display: flex;
-        justify-content: space-around;
-        gap: var(--gap);
-        min-width: 100%;
-        animation: scroll 20s linear infinite;
+      animation-play-state: paused !important;
     }
-    .marquee--hover-pause:hover .marquee__content {
-        animation-play-state: paused;
-    }
-    @media (prefers-reduced-motion: reduce) {
-        .marquee__content {
-            animation-play-state: paused !important;
-        }
-    }
+  }
 }
 
 /* Keyframes for marquee scroll animation */
-@keyframes scroll {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(calc(-100% - var(--gap)));
-    }
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
 }
 
-/* Override for navigation hover to remain white with bulge (scale) effect */
+/* Nav hover override for consistency */
 nav a:hover,
 nav button:hover {
-    color: white !important;
-    transform: scale(1.05);
-    transition: transform 0.2s ease-in-out;
+  color: white !important;
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
 }

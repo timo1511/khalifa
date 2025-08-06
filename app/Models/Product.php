@@ -22,6 +22,7 @@ class Product extends Model
         'colors',
         'stitching_colors',
         'stock',
+        'category_id', // Added: Foreign key for category relationship
     ];
 
     /**
@@ -64,5 +65,15 @@ class Product extends Model
     public function orders()
     {
         return $this->hasMany(Order::class); // Improved: Active relationship to Order model for e-commerce tracking
+    }
+
+    /**
+     * Define the relationship to category.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function category()
+    {
+        return $this->belongsTo(Category::class); // Added: Relationship to Category model
     }
 }
